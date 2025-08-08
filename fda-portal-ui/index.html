@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WorkFlow Portal - Mock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor" />
+        </svg>
+        <span class="brand-name">WorkFlow Portal</span>
+        <span class="workspace">Using workspace <strong>WF_Mock</strong></span>
+      </div>
+      <div class="header-actions">
+        <button id="toggleSidebarBtn" class="btn ghost" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </button>
+        <div class="user">AUDINE ESCALONA</div>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside id="sidebar" class="sidebar">
+        <nav class="nav">
+          <div class="nav-section-title">Cases</div>
+          <ul class="nav-list">
+            <li class="nav-item active" data-filter="inbox">
+              <span>Inbox</span>
+              <span class="count">1</span>
+            </li>
+            <li class="nav-item" data-filter="draft"><span>Draft</span><span class="count">0</span></li>
+            <li class="nav-item" data-filter="participated"><span>Participated</span><span class="count">0</span></li>
+            <li class="nav-item" data-filter="unassigned"><span>Unassigned</span><span class="count">0</span></li>
+            <li class="nav-item" data-filter="paused"><span>Paused</span><span class="count">0</span></li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <button class="btn primary w-full" id="newCaseBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13H13v6h-2v-6H5v-2h6V5h2v6h6v2Z"/></svg>
+            New case
+          </button>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <div class="toolbar-actions">
+              <button class="btn ghost">Open</button>
+              <button class="btn ghost">Actions</button>
+              <button class="btn ghost">Read</button>
+              <button class="btn ghost">Unread</button>
+            </div>
+            <div class="toolbar-filters">
+              <label class="field">
+                <span class="field-label">Category</span>
+                <select id="categorySelect">
+                  <option>All Categories</option>
+                  <option>License</option>
+                  <option>Renewal</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field-label">Process</span>
+                <select id="processSelect">
+                  <option>All Processes</option>
+                  <option>License To Operate v2.0</option>
+                  <option>Renewal/Reissuance</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="toolbar-right">
+            <label class="search">
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m21 20.3l-5.6-5.6a7.5 7.5 0 1 0-1.4 1.4l5.6 5.6l1.4-1.4M4 10.5A6.5 6.5 0 1 1 10.5 17A6.5 6.5 0 0 1 4 10.5"/></svg>
+              <input id="searchInput" type="search" placeholder="Search..." />
+            </label>
+          </div>
+        </div>
+
+        <section class="table-wrap">
+          <table id="casesTable" class="cases-table">
+            <thead>
+              <tr>
+                <th role="button" data-sort="caseNo">Case No.</th>
+                <th role="button" data-sort="caseName">Case Name</th>
+                <th role="button" data-sort="process">Process</th>
+                <th role="button" data-sort="task">Task</th>
+                <th role="button" data-sort="sentBy">Sent By</th>
+                <th role="button" data-sort="dueDate">Due Date</th>
+                <th role="button" data-sort="lastModify">Last Modify</th>
+                <th role="button" data-sort="priority">Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows populated by script.js -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <template id="rowTemplate">
+      <tr>
+        <td data-key="caseNo"></td>
+        <td data-key="caseName"></td>
+        <td data-key="process"></td>
+        <td data-key="task"></td>
+        <td data-key="sentBy"></td>
+        <td data-key="dueDate"></td>
+        <td data-key="lastModify"></td>
+        <td data-key="priority"></td>
+      </tr>
+    </template>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
