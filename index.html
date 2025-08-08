@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDA ePORTAL - System for Food and Drug Administration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-section">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'%3E%3Ctext x='10' y='30' font-family='Arial, sans-serif' font-size='16' font-weight='bold' fill='%23003366'%3EFDA%3C/text%3E%3C/svg%3E" alt="FDA Logo" class="logo">
+                    <div class="org-info">
+                        <h1>Food and Drug Administration</h1>
+                        <p>Republic of the Philippines</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span>Using workspace: <strong>FDA_WorkFlow</strong></span>
+                    <span class="date">06/06/2023</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <a href="#" class="nav-tab active">HOME</a>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-folder"></i>
+                    <span>Cases</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="menu-item active">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>New Case</span>
+                    </li>
+                    <li class="menu-item">
+                        <i class="fas fa-inbox"></i>
+                        <span>Inbox (1)</span>
+                    </li>
+                    <li class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Draft (1)</span>
+                    </li>
+                    <li class="menu-item">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Outgoing (1)</span>
+                    </li>
+                    <li class="menu-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Unassigned</span>
+                    </li>
+                    <li class="menu-item">
+                        <i class="fas fa-pause-circle"></i>
+                        <span>Paused (1)</span>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Content Area -->
+            <main class="content-area">
+                <!-- Toolbar -->
+                <div class="toolbar">
+                    <div class="toolbar-left">
+                        <label for="actions-select">Actions</label>
+                        <select id="actions-select" class="form-select">
+                            <option>Read</option>
+                            <option>Unread</option>
+                            <option>Delete</option>
+                        </select>
+                        
+                        <label for="category-select">All Category</label>
+                        <select id="category-select" class="form-select">
+                            <option>All Categories</option>
+                            <option>License Applications</option>
+                            <option>Renewal/Reissue</option>
+                            <option>Compliance</option>
+                        </select>
+                        
+                        <label for="process-select">Process</label>
+                        <select id="process-select" class="form-select">
+                            <option>All Processes</option>
+                            <option>License To Operate</option>
+                            <option>Renewal/Reissue</option>
+                        </select>
+                        
+                        <input type="text" placeholder="Search..." class="search-input">
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all"></th>
+                                <th>#</th>
+                                <th>Status</th>
+                                <th>Case No.</th>
+                                <th>Case Name</th>
+                                <th>Process</th>
+                                <th>Task</th>
+                                <th>Sent By</th>
+                                <th>Due Date</th>
+                                <th>Last Modified</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>144</td>
+                                <td><span class="status-icon status-new">📄</span></td>
+                                <td class="case-number">39000-14074685</td>
+                                <td class="case-name">
+                                    <div>Initial License To Operate v2.0</div>
+                                    <div class="sub-text">HEALTHY ORGANICS MERCHANDISING CORP. - Distributor</div>
+                                </td>
+                                <td>License To Operate v2.0</td>
+                                <td>Renewal/Reissue</td>
+                                <td>Records Officer</td>
+                                <td>25/02/2028</td>
+                                <td>25/04/2025</td>
+                                <td class="priority-normal">NOR</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>143</td>
+                                <td><span class="status-icon status-pending">⏳</span></td>
+                                <td class="case-number">39000-14074686</td>
+                                <td class="case-name">
+                                    <div>Renewal License To Operate</div>
+                                    <div class="sub-text">METRO PHARMACEUTICAL CORP. - Manufacturer</div>
+                                </td>
+                                <td>License To Operate v2.0</td>
+                                <td>Review/Assessment</td>
+                                <td>License Officer</td>
+                                <td>15/03/2028</td>
+                                <td>20/04/2025</td>
+                                <td class="priority-high">HIGH</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>142</td>
+                                <td><span class="status-icon status-approved">✅</span></td>
+                                <td class="case-number">39000-14074687</td>
+                                <td class="case-name">
+                                    <div>Product Registration</div>
+                                    <div class="sub-text">PHARMA SOLUTIONS INC. - Generic Medicine</div>
+                                </td>
+                                <td>Product Registration</td>
+                                <td>Final Approval</td>
+                                <td>Regulatory Affairs</td>
+                                <td>10/02/2028</td>
+                                <td>18/04/2025</td>
+                                <td class="priority-normal">NOR</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>141</td>
+                                <td><span class="status-icon status-review">🔍</span></td>
+                                <td class="case-number">39000-14074688</td>
+                                <td class="case-name">
+                                    <div>Cosmetic Product Registration</div>
+                                    <div class="sub-text">BEAUTY ESSENTIALS CORP. - Cosmetic Products</div>
+                                </td>
+                                <td>Cosmetic Registration</td>
+                                <td>Technical Review</td>
+                                <td>Technical Officer</td>
+                                <td>05/04/2028</td>
+                                <td>16/04/2025</td>
+                                <td class="priority-normal">NOR</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>140</td>
+                                <td><span class="status-icon status-new">📄</span></td>
+                                <td class="case-number">39000-14074689</td>
+                                <td class="case-name">
+                                    <div>Food Facility Registration</div>
+                                    <div class="sub-text">FRESH FOODS MANUFACTURING - Food Processor</div>
+                                </td>
+                                <td>Food Registration</td>
+                                <td>Initial Assessment</td>
+                                <td>Food Officer</td>
+                                <td>30/03/2028</td>
+                                <td>14/04/2025</td>
+                                <td class="priority-low">LOW</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="btn-pagination" disabled>Previous</button>
+                    <span class="page-info">Page 1 of 5</span>
+                    <button class="btn-pagination">Next</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
